@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Delmira Granda</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:#080808;font-family:Arial,Helvetica,sans-serif}
+body{min-height:100vh}
+.app{max-width:720px;margin:0 auto;background:#fff;min-height:100vh}
+.top{height:92px;display:flex;align-items:center;justify-content:space-between;padding:22px 30px 10px}
+.icon{font-size:37px;line-height:1;font-weight:300}
+.more{width:44px;height:44px;border:3px solid #111;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:25px;letter-spacing:2px}
+.profile{padding:28px 32px 0}
+.profile-head{display:flex;justify-content:space-between;align-items:flex-start}
+.name{font-size:48px;font-weight:700;line-height:1.05;margin-top:28px}
+.handle{font-size:29px;font-weight:600;margin-top:12px}
+.avatar{width:128px;height:128px;border-radius:50%;object-fit:cover}
+.stats{color:#999;font-size:28px;margin:30px 0 42px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.btn{height:64px;border:0;border-radius:20px;font-size:30px;font-weight:600;background:#f4f4f4}
+.btn.primary{background:#000;color:#fff}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-bottom:1px solid #ddd}
+.tab{height:76px;text-align:center;font-size:29px;font-weight:700;color:#aaa;padding-top:12px}
+.tab.active{color:#111;border-bottom:3px solid #111}
+.feed{padding-top:22px}
+.pinned{color:#999;font-size:25px;padding:0 40px 24px}
+.post{border-bottom:1px solid #ddd;padding:0 16px 22px}
+.post-head{display:flex;gap:15px;align-items:center}
+.post-avatar{width:72px;height:72px;border-radius:50%;object-fit:cover}
+.post-user{font-size:27px;font-weight:700}
+.date{color:#999;font-weight:400}
+.dots{margin-left:auto;font-size:30px;color:#888}
+.card{margin-left:88px;margin-top:-3px;border:1px solid #ddd;border-radius:0 28px 28px 28px;overflow:hidden;background:#fff}
+.preview{height:310px;background:#241c1b;display:flex;align-items:center;justify-content:center;position:relative}
+.preview img{height:100%;width:auto;max-width:100%;object-fit:cover}
+.play{position:absolute;width:92px;height:92px;border:5px solid white;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.15)}
+.play:after{content:"";margin-left:8px;border-left:30px solid white;border-top:20px solid transparent;border-bottom:20px solid transparent}
+.linkbox{padding:22px 30px}
+.link{font-size:25px;color:#999;margin-bottom:8px}
+.online{font-size:29px}
+.dot{display:inline-block;width:30px;height:30px;border-radius:50%;background:#82b83d;margin-right:10px;vertical-align:-4px}
+.metrics{margin-left:88px;display:flex;gap:38px;color:#444;font-size:25px;padding-top:22px}
+.metrics span{display:flex;align-items:center;gap:7px}
+.second{padding:28px 16px}
+.blue{color:#168fd0;font-size:27px;margin-left:88px;margin-top:-5px}
+.bottom{position:sticky;bottom:0;background:#fff;border-top:1px solid #ddd;height:82px;display:flex;align-items:center;justify-content:space-around;font-size:31px}
+.cta{display:block;text-decoration:none;background:#000;color:#fff;text-align:center;margin:20px 16px 12px;border-radius:16px;padding:16px;font-size:22px;font-weight:700}
+.note{text-align:center;color:#999;font-size:12px;padding:0 15px 14px}
+@media(max-width:520px){
+ .top{height:80px;padding:18px 24px 8px}
+ .profile{padding:22px 24px 0}
+ .name{font-size:39px}.handle{font-size:24px}.avatar{width:104px;height:104px}
+ .stats{font-size:22px;margin:25px 0 34px}
+ .btn{height:58px;font-size:25px}.tabs{margin-top:38px}.tab{font-size:23px;height:68px}
+ .pinned{font-size:21px;padding-left:28px}.post-user{font-size:22px}.post-avatar{width:62px;height:62px}
+ .card{margin-left:76px}.preview{height:270px}.metrics,.blue{margin-left:76px}
+}
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <div class="icon">←</div>
+    <div style="display:flex;gap:30px;align-items:center">
+      <div class="icon">⌕</div><div class="icon">♧</div><div class="more">•••</div>
+    </div>
+  </header>
+
+  <section class="profile">
+    <div class="profile-head">
+      <div>
+        <div class="name">Delmira Granda</div>
+        <div class="handle">delmira.granda</div>
+      </div>
+      <img class="avatar" src="avatar.jpg" alt="Profile image">
+    </div>
+    <div class="stats">2,118 followers&nbsp; · &nbsp;84.2K recent views</div>
+    <div class="actions">
+      <button class="btn primary" onclick="go()">Follow</button>
+      <button class="btn" onclick="go()">Mention</button>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <div class="tab active">Threads</div><div class="tab">Replies</div><div class="tab">Media</div><div class="tab">Reposts</div>
+  </nav>
+
+  <section class="feed">
+    <div class="pinned">📌 &nbsp;Pinned</div>
+
+    <article class="post">
+      <div class="post-head">
+        <img class="post-avatar" src="avatar.jpg" alt="">
+        <div class="post-user">delmira.granda <span class="date">09/08</span></div>
+        <div class="dots">•••</div>
+      </div>
+
+      <div class="card" onclick="go()" role="button">
+        <div class="preview">
+          <img src="post-preview.jpg" alt="Post preview">
+          <div class="play"></div>
+        </div>
+        <div class="linkbox">
+          <div class="link">🔷 me-and-yours0-9ml.pages.dev</div>
+          <div class="online"><span class="dot"></span>Online</div>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <span>♡ 262</span><span>◯ 32</span><span>⟳ 5</span><span>➤ 40</span>
+      </div>
+    </article>
+
+    <article class="second">
+      <div class="post-head">
+        <img class="post-avatar" src="avatar.jpg" alt="">
+        <div class="post-user">delmira.granda <span class="date">09/09</span></div>
+        <div class="dots">•••</div>
+      </div>
+      <div class="blue">app-conenct1-8ml.page.gd</div>
+    </article>
+  </section>
+
+  <a class="cta" href="https://www.profitableratecpmnetwork.com/syi9xwr9?key=0b1a488dd2ee5b9f70ab266d548efa3a" rel="nofollow">Open</a>
+  <div class="note">Demo-style landing page • no login or personal-data collection</div>
+
+  <footer class="bottom"><span>⌂</span><span>➤</span><span>＋</span><span>♡</span><span>◉</span></footer>
+</main>
+
+<script>
+const destination = "https://www.profitableratecpmnetwork.com/syi9xwr9?key=0b1a488dd2ee5b9f70ab266d548efa3a";
+function go(){ window.location.href = destination; }
+</script>
+</body>
+</html>
